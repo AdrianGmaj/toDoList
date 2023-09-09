@@ -5,6 +5,15 @@
             [col-start] minmax(min-content, 20rem) [col-end]) [center-end];
     grid-template-rows: min-content 90vh repeat(9, min-content);
 
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #FFFFE0;
+        opacity: 1;
+        /* Firefox */
+        font-family: 'Teko', sans-serif;
+        ;
+    }
+
 
 
 
@@ -29,7 +38,7 @@
     &-title {
         font-size: calc(2.5rem + 5vh);
         text-transform: uppercase;
-        font-weight: 200;
+        font-weight: 700;
     }
 
     &-icon {
@@ -56,63 +65,83 @@
         width: 50vw;
         background-color: transparent;
         border: none;
-        border-bottom: 0.4rem solid #F5F5DA;
+        border-bottom: 0.7rem solid #F5F0BF;
         margin-top: 3rem;
         color: white;
         font-size: calc(1rem + 3vh);
         transition: all 0.5 ease-in-out;
+        color: #FFFFE0;
+       
+        font-family: 'Teko', sans-serif;
+        
     }
 
     input:focus {
         outline: none;
-        border-bottom: 0.4rem solid #FFEB00;
+        // border-bottom: 0.4rem solid #FFEB00;
 
     }
 
     .input_content-button {
         background-color: none;
-        overflow: hidden;
-        z-index: 2;
-        position: relative;
-        width: 5rem;
-        display: flex;
-        background-color: #F5F5DA;
-        justify-content: center;
-        align-items: center;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
-    }
-
-    .input_content-button:hover {
-        color: #C4AA7D;
-        z-index: 2;
-
-    }
-
-    .input_content-button:before,
-    .input_content-button:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        height: 0%;
-        width: 100%;
-        z-index: -1;
-        background-color: #FFEB00;
         ;
-        transition: all 0.5s ease-in-out;
 
 
-        transform: translate(-50%, -50%) rotate(45deg);
+        width: 8rem;
+        height: 8em;
+        bottom: 0;
+
+        background-color: transparent;
+        border-bottom: 0.7rem solid #F5F0BF;
+        border-right: 0.5rem solid #F5F0BF;
+        border-top: 0.2rem solid #F5F0BF;
+
+
+
+
+
+        color: #FFEB00;
+        border-top: 0.1rem solid #F5F0BF;
+        display: inline-block;
+        position: relative;
+
+
+
+        i {
+            position: absolute;
+            align-self: center;
+            font-size: 5rem;
+            transition: all 0.9s ease-in-out;
+
+            cursor: pointer;
+
+        }
+
     }
 
-    .input_content-button:hover::before,
-    .input_content-button:active::before {
-        height: 200%;
-        width: 200%;
-
+    .fa-solid:hover {
+        transform: rotate(360deg)
     }
+
+    // .input_content-button:after {
+    //     content: '';
+    //     background-color: #C4AA7D;
+    //     color: white;
+    //     position: absolute;
+    //     left: 0;
+    //     bottom: -100%;
+    //     transform: rotateX(-90deg);
+    //     transform-origin: top;
+    //     content: attr(data-text);
+    //     width: 100%;
+    //     height: 7rem;
+    //     border-bottom: 0.7rem solid #F5F0BF;
+
+
+
+    // }
+
+
 }
 
 
@@ -121,23 +150,26 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 2rem;
 
 
     li {
         background-color: transparent;
         width: 80%;
 
-        border-bottom: 0.5rem solid #FFEB00;
-        border-right: 0.3rem solid #FFEB00;
+        border-bottom: 0.5rem solid #F5F0BF;
+        border-right: 0.3rem solid #F5F0BF;
         margin-top: 2rem;
         text-align: center;
         font-size: calc(4vh);
         display: grid;
         grid-template-columns: 80% 1fr 1fr;
+        font-size: calc(2rem + 1.5vh);
+        color: #FFFFE0;
 
         a.a-done {
             color: #FFEB00;
-            border-top: 0.1rem solid #FFEB00;
+            border-top: 0.1rem solid #F5F0BF;
             display: block;
             position: relative;
             transform-style: preserve-3d;
@@ -148,7 +180,7 @@
 
         a.a-remove {
             color: #c47d86;
-            border-top: 0.1rem solid #FFEB00;
+            border-top: 0.1rem solid #F5F0BF;
             display: block;
             position: relative;
             transform-style: preserve-3d;
@@ -192,5 +224,23 @@
             content: attr(data-text);
             width: 100%;
         }
+    }
+}
+
+
+.tasks_list-done {
+    li {
+        grid-template-columns: 90% 1fr;
+
+        i {
+            color: #89c47d;
+            border-top: 0.1rem solid #F5F0BF;
+        }
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 4rem;
+        font-size: calc(2.5rem + 3vh);
     }
 }

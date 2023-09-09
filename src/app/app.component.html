@@ -11,7 +11,7 @@
 
  <div class="input_content">
   <input [(ngModel)]="newTask" type="text" placeholder="add something..">
-  <a (click)="add(newTask)" class="input_content-button"><i class="fa-solid fa-plus"></i></a>
+  <a (click)="add(newTask)" (keydown.enter)="add(newTask)" class="input_content-button" data-text="add"><i class="fa-solid fa-plus"></i></a>
  </div>
   {{newTask}}
 
@@ -27,8 +27,12 @@
     </ul>
   </div>
   <div class="tasks_list-done">
+    <h2 *ngIf="doneTasks.length>0" class="taks_list-done_title">
+      You've got this done 
+    </h2>
     <ul class="task_list-list-container">
       <li *ngFor=" let task of doneTasks">{{task}}
+        <i class="fa-solid fa-check"></i>
 
     
       
