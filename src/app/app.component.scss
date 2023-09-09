@@ -1,0 +1,196 @@
+.container {
+    display: grid;
+    grid-template-columns:
+        [center-start] repeat(6,
+            [col-start] minmax(min-content, 20rem) [col-end]) [center-end];
+    grid-template-rows: min-content 90vh repeat(9, min-content);
+
+
+
+
+
+}
+
+.toDoList {
+    grid-column: center-start/container-end;
+    row-gap: 2vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding-top: 2rem;
+
+
+    &-title {
+        font-size: calc(2.5rem + 5vh);
+        text-transform: uppercase;
+        font-weight: 200;
+    }
+
+    &-icon {
+        font-size: calc(2.5rem + 5vh);
+        font-weight: 200;
+        color: #FFEB00;
+        margin-left: 3rem;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &-icon:hover,
+    &-icon:active {
+        transform: translateY(-20%);
+        color: #89c47d
+    }
+}
+
+.input_content {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+
+    input {
+        width: 50vw;
+        background-color: transparent;
+        border: none;
+        border-bottom: 0.4rem solid #F5F5DA;
+        margin-top: 3rem;
+        color: white;
+        font-size: calc(1rem + 3vh);
+        transition: all 0.5 ease-in-out;
+    }
+
+    input:focus {
+        outline: none;
+        border-bottom: 0.4rem solid #FFEB00;
+
+    }
+
+    .input_content-button {
+        background-color: none;
+        overflow: hidden;
+        z-index: 2;
+        position: relative;
+        width: 5rem;
+        display: flex;
+        background-color: #F5F5DA;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .input_content-button:hover {
+        color: #C4AA7D;
+        z-index: 2;
+
+    }
+
+    .input_content-button:before,
+    .input_content-button:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 0%;
+        width: 100%;
+        z-index: -1;
+        background-color: #FFEB00;
+        ;
+        transition: all 0.5s ease-in-out;
+
+
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .input_content-button:hover::before,
+    .input_content-button:active::before {
+        height: 200%;
+        width: 200%;
+
+    }
+}
+
+
+.task_list-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    li {
+        background-color: transparent;
+        width: 80%;
+
+        border-bottom: 0.5rem solid #FFEB00;
+        border-right: 0.3rem solid #FFEB00;
+        margin-top: 2rem;
+        text-align: center;
+        font-size: calc(4vh);
+        display: grid;
+        grid-template-columns: 80% 1fr 1fr;
+
+        a.a-done {
+            color: #FFEB00;
+            border-top: 0.1rem solid #FFEB00;
+            display: block;
+            position: relative;
+            transform-style: preserve-3d;
+            transform-origin: top;
+
+            transition: all 0.5s ease-in;
+        }
+
+        a.a-remove {
+            color: #c47d86;
+            border-top: 0.1rem solid #FFEB00;
+            display: block;
+            position: relative;
+            transform-style: preserve-3d;
+            transform-origin: top;
+            transition: all 0.5s ease-in;
+        }
+
+        a.a-done:hover {
+            // background-color: #89c47d;
+            // color: white;
+
+            transform: rotateX(90deg);
+        }
+
+        a.a-remove:hover {
+            // background-color: #c47d86;
+            // color: white;
+            transform: rotateX(90deg);
+        }
+
+
+        a.a-done::after {
+            background-color: #89c47d;
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            content: attr(data-text);
+            width: 100%;
+        }
+
+        a.a-remove::after {
+            background-color: #c47d86;
+            color: white;
+            position: absolute;
+            left: 0;
+            bottom: -100%;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            content: attr(data-text);
+            width: 100%;
+        }
+    }
+}
