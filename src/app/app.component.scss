@@ -71,9 +71,9 @@
         font-size: calc(1rem + 3vh);
         transition: all 0.5 ease-in-out;
         color: #FFFFE0;
-       
+
         font-family: 'Teko', sans-serif;
-        
+
     }
 
     input:focus {
@@ -88,7 +88,7 @@
 
 
         width: 8rem;
-        height: 8em;
+
         bottom: 0;
 
         background-color: transparent;
@@ -161,7 +161,7 @@
         border-right: 0.3rem solid #F5F0BF;
         margin-top: 2rem;
         text-align: center;
-        font-size: calc(4vh);
+
         display: grid;
         grid-template-columns: 80% 1fr 1fr;
         font-size: calc(2rem + 1.5vh);
@@ -242,5 +242,74 @@
         text-align: center;
         margin-top: 4rem;
         font-size: calc(2.5rem + 3vh);
+    }
+}
+
+// * 800px */
+@media screen and (max-width: 1400px) {
+    a.a-remove::after {
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    a.a-done::after {
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+}
+
+// 600px **
+@media screen and (max-width: 700px) {
+
+    a.a-remove::after {
+        font-size: 0.8rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    a.a-done::after {
+        font-size: 1rem;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .task_list-list-container {
+        li {
+            font-size: calc(1.5rem);
+        }
+    }
+
+    .header_content-title,
+    .header_content-icon {
+        font-size: 2rem;
+    }
+
+
+    .input_content input {
+        width: 60vw;
+        background-color: transparent;
+        border: none;
+        border-bottom: 0.7rem solid #F5F0BF;
+        margin-top: 3rem;
+        color: white;
+        font-size: calc(1rem + 1vh);
+        transition: all 0.5 ease-in-out;
+        color: #FFFFE0;
+
+        font-family: 'Teko', sans-serif;
+
+    }
+
+    .tasks_list-done {
+        h2 {
+            font-size: 2rem;
+        }
     }
 }

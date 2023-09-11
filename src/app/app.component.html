@@ -10,8 +10,8 @@
   </div>
 
  <div class="input_content">
-  <input [(ngModel)]="newTask" type="text" placeholder="add something..">
-  <a (click)="add(newTask)" (keydown.enter)="add(newTask)" class="input_content-button" data-text="add"><i class="fa-solid fa-plus"></i></a>
+  <input (keydown.enter)="add(newTask)" [(ngModel)]="newTask" type="text" placeholder="add something..">
+  <a (click)="add(newTask)"  class="input_content-button" data-text="add"><i class="fa-solid fa-plus"></i></a>
  </div>
   {{newTask}}
 

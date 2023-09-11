@@ -13,10 +13,11 @@ export class AppComponent {
   newTask: string = ''
 
   add(task: string) {
+    if (this.newTask.length>0){
     this.tasks.unshift(task)
     console.log(task)
     this.newTask =''
-  }
+  }}
 
   remove(task: string) {
     this.tasks = this.tasks.filter((e) => e != task)
